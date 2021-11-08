@@ -1,15 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
 };
 
 export const basketSlice = createSlice({
-  name: "basket",
+  name: 'basket',
   initialState,
   reducers: {
-    addToBasket: (state, action) => {},
-    removeFromBasket: (state, action) => {},
+    addToBasket: (state, action) => {
+      state.items = [...state.items, action.payload];
+    },
+    removeFromBasket: (state, action) => {
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id
+      );
+
+      let newBasket = [...state.items];
+      if (index >= 0) {
+        // the item exists in the basket
+        newBasket.splice(index, 1);
+      } else {
+        // item doesn't exist in the basket
+      }
+
+      state.items = newBasket;
+    },
   },
 });
 

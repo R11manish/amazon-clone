@@ -2,7 +2,7 @@
 
 ![alt screenshot of project](Overview.png)
 
-live preview available over Here : [click Here](amz-clone-pqc0nijtq-r11manish.vercel.app)
+live preview available over Here : [click Here](https://amazon-clone-two-fawn.vercel.app)
 
 - [x] Next.js + Redux
 - [x] Tailwind CSS + API(used fakstore api)
